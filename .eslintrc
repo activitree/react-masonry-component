@@ -1,7 +1,81 @@
 {
   "env": {
-    "node": true,
-    "browser": true
+    "browser": true,
+    "es6": true,
+    "node": true
   },
-  "extends": "eslint:recommended"
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "parser": "babel-eslint",
+  "plugins": [
+    "react",
+    "node",
+    "import"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "standard",
+    "plugin:react/recommended"
+  ],
+  "settings": {
+    "import/resolver": "meteor",
+    "react": {
+      "createClass": "createReactClass", // Regex for Component Factory to use,
+      // default to "createReactClass"
+      "pragma": "React",  // Pragma to use, default to "React"
+      "version": "detect", // React version. "detect" automatically picks the version you have installed.
+      // You can also use `16.0`, `16.3`, etc, if you want to override the detected value.
+      // default to latest and warns if missing
+      // It will default to "detect" in the future
+      "flowVersion": "0.53" // Flow version
+    },
+    "propWrapperFunctions": [
+      // The names of any function used to wrap propTypes, e.g. `forbidExtraProps`. If this isn't set, any propTypes wrapped in a function will be skipped.
+      "forbidExtraProps",
+      {"property": "freeze", "object": "Object"},
+      {"property": "myFavoriteWrapper"}
+    ],
+    "linkComponents": [
+      // Components used as alternatives to <a> for linking, eg. <Link to={ url } />
+      "Hyperlink",
+      {"name": "Link", "linkAttribute": "to"}
+    ]
+  },
+  "rules": {
+    "no-console": "off",
+    "no-undef": [2],
+    "no-case-declarations": "off",
+    "react/jsx-closing-bracket-location": "off",
+    "react/jsx-first-prop-new-line": "off",
+    "react/jsx-wrap-multilines": "off",
+    "react/jsx-closing-tag-location": "off",
+    "object-curly-newline": "off",
+    // "react/jsx-handler-names": "off",
+    "react/prop-types": "off",
+    // "node/exports-style": ["error", "module.exports"],
+    // "node/prefer-global/buffer": ["error", "always"],
+    // "node/prefer-global/console": ["error", "always"],
+    // "node/prefer-global/process": ["error", "always"],
+    // "node/prefer-global/url-search-params": ["error", "always"],
+    // "node/prefer-global/url": ["error", "always"],
+    // "node/prefer-promises/dns": "error",
+    // "node/prefer-promises/fs": "error",
+    "node/no-unsupported-features/es-syntax": "off",
+    "node/no-missing-import": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "import/no-extraneous-dependencies": 0,
+    "meteor/no-session": 0,
+    "meteor/audit-argument-checks": 0
+  }
 }

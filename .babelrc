@@ -1,3 +1,7 @@
 {
-  "presets": ["react", "es2015"]
+  "plugins": [
+    "transform-class-properties",
+    "@babel/plugin-proposal-optional-chaining"
+  ],
+  "presets": [["@babel/env", { "targets": { "node": 12 } }]]
 }
