@@ -1,6 +1,6 @@
 {
   "name": "react-masonry-component",
-  "version": "6.3.2",
+  "version": "6.3.3",
   "main": "./lib/index",
   "description": "A masonry component for React.js",
   "typings": "typings.d.ts",
@@ -9,8 +9,8 @@
     "imagesloaded": "^4.1.4",
     "lodash.debounce": "^4.0.8",
     "lodash.omit": "^4.5.0",
-    "masonry-layout": "^4.2.0",
-    "prop-types": "^15.5.8"
+    "masonry-layout": "^4.2.2",
+    "prop-types": "^15.7.2"
   },
   "peerDependencies": {
     "react": "^16.11.0-0"
