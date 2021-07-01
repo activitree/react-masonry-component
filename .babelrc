@@ -1,7 +1,23 @@
 {
   "plugins": [
-    "transform-class-properties",
-    "@babel/plugin-proposal-optional-chaining"
+    "@babel/plugin-proposal-optional-chaining",
+    ["@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ]
   ],
-  "presets": [["@babel/env", { "targets": { "node": 12 } }]]
+  "presets": [
+    ["@babel/env",
+      {
+        "targets": [
+          "defaults",
+          "last 2 versions",
+          "not IE 11",
+          "node 12"
+        ]
+      }
+    ],
+    ["@babel/preset-react"]
+  ]
 }

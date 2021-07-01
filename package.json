@@ -1,9 +1,17 @@
 {
-  "name": "react-masonry-component",
-  "version": "6.3.4",
-  "main": "./lib/index",
+  "name": "@activitree/react-masonry-component",
+  "version": "6.3.5",
+  "main": "src/index",
   "description": "A masonry component for React.js",
   "typings": "typings.d.ts",
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "babel src --out-dir lib --copy-files --source-maps",
+    "build:watch": "npm run build -s -- -w",
+    "test": "npm run lint && karma start spec/setup/karma.conf.js",
+    "dev": "karma start spec/setup/karma.conf.js --no-single-run",
+    "lint": "eslint src/index.js"
+  },
   "dependencies": {
     "element-resize-detector": "^1.2.2",
     "imagesloaded": "^4.1.4",
@@ -12,40 +20,48 @@
     "masonry-layout": "^4.2.2",
     "prop-types": "^15.7.2"
   },
-  "peerDependencies": {
-    "react": "^16.11.0-0"
+  "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/eslint-parser": "^7.14.7",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-proposal-optional-chaining": "^7.14.5",
+    "@babel/plugin-transform-modules-commonjs": "^7.14.5",
+    "@babel/plugin-transform-runtime": "^7.14.5",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/runtime": "^7.14.6",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "copy-webpack-plugin": "^8.1.1",
+    "css-loader": "^5.2.4",
+    "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.6.2",
+    "eslint": "^7.26.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.23.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.2",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "jest": "^26.6.3",
+    "jest-fetch-mock": "^3.0.3",
+    "postcss-loader": "^5.3.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hot-loader": "^4.13.0",
+    "react-syntax-highlighter": "^15.4.3",
+    "react-test-renderer": "^17.0.2",
+    "rimraf": "^3.0.2",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.37.0",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.7.3"
   },
-  "scripts": {
-    "test": "npm run lint && karma start spec/setup/karma.conf.js",
-    "dev": "karma start spec/setup/karma.conf.js --no-single-run",
-    "lint": "eslint lib/index.js"
+  "peerDependencies": {
+    "react": "^16.0.0 || ^17.0.0 "
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/activitree/react-masonry-component"
   },
-  "keywords": [
-    "react",
-    "mixin",
-    "masonry",
-    "packery",
-    "isotope",
-    "react-component"
-  ],
-  "author": "Eirik Vullum <evullum@gmail.com> (http://www.evconsult.no/)",
-  "contributors": [
-    {
-      "name": "Marwan Butrous",
-      "email": "marwan.butrous@protonmail.ch"
-    },
-    {
-      "name": "Paul Paulicles",
-      "email": "earth.projects@icloud.com"
-    }
-  ],
-  "bugs": {
-    "url": "https://github.com/activitree/react-masonry-component/issues"
-  },
-  "homepage": "https://github.com/activitree/react-masonry-component",
   "license": "MIT"
 }

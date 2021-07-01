@@ -43,3 +43,4 @@ Thumbs.db
 # Custom #
 ##########
 /node_modules
+.npmrc
